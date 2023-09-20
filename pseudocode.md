@@ -1,6 +1,9 @@
 Needs to be responsive to multiple screen sizes
+
 The answer to the problem is always a multiple of 9 which is why the mind reader works
+
 results should be 0-99 for the page 5
+
 When building this, remember we are not building 6 different pages. We are building one page whose elements are modified for the functionality of the page.
 This is an html page.
 go/refresh button needs to be round
