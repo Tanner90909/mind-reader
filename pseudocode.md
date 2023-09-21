@@ -41,3 +41,35 @@ we want 1 conatiner that we add and remove the elements based on the state of th
     - eventlistener to make the buttons work
     - create an object for the entire page (mindReader) and have the data in your arrays pull the correct data according to the state of your mindReader object
 
+## HTML and Bootstrap
+
+Create a container, row and column for the UI.
+
+Create two separate buttons, one rectangular and one circular
+
+Rectangular button only appears on pages 2-5
+
+Circular button on all pages
+
+Create h1 tags for the primary text and maybe a p element for the secondary text?
+
+h1 element on all pages
+
+p element on pages 2-6
+
+Apply Bootstrap CSS to my html elements to get the container looking like a page.
+
+## Javascript
+
+initialize a variable that tells us what page we are on
+
+initialize 2 arrays with strings we want for the text in the elements on the pages
+
+for loop to create the range of integers that equal symbols on page 5???
+
+create a function that changes the page according to button clicks
+
+create a function that takes us back to page 1 if refresh button is clicked
+
+create a function that changes the strings on the page according to what page we are on at the moment
+
