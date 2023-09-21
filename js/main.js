@@ -1,10 +1,16 @@
 const stateArray = [0,1,2,3,4,5];
 let currentStateIndex = 0;
 
-function generateSymbol(){
-const arrayOfSymbols = ["&", "@", "#", "$", "%", "^", "*", "+", "!"];
-for (i = 0; i < 100; i++)
-
+const arrayOfSymbols = [ "@", "#", "$", "%", "^", "*", "+", "!"];
+const divisbleBy9Symbol = "&";
+const numbers = Array.from({length: 100}, (_, i) => i);
+const symbolNumberPairs = {};
+for (let i=0; i<numbers.length; i++){
+    if (i%9 === 0){
+        symbolNumberPairs[i] = divisbleBy9Symbol;
+    } else {
+        symbolNumberPairs[i] = arrayOfSymbols.pop();
+    }
 }
 
 let array1 = ["I can read your mind", "Pick a number from 01-99", "Add both digits together to get a new number", "Subtract your new number from the original number", "", "&" ];
