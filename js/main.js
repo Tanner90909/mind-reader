@@ -12,10 +12,10 @@ primaryText.textContent = array1[currentStateIndex];
 subText.textContent = array2[currentStateIndex];
 
 function updateText(){
-    primaryText.textContent = array1[currentStateIndex];
-    subText.textContent = array2[currentStateIndex];
+        primaryText.textContent = array1[currentStateIndex];
+        subText.textContent = array2[currentStateIndex];
 }
-
+        
 nextButton.addEventListener('click', function(){
     currentStateIndex++;
     if (currentStateIndex >= stateArray.length){
@@ -24,35 +24,14 @@ nextButton.addEventListener('click', function(){
     updateText();
 });
 
-//attempt at random symbols below
-
-const arrayOfSymbols = [ "@", "#", "$", "%", "^", "*", "+", "!"];
-const divisbleBy9Symbol = "&";
-const numbers = Array.from({length: 100}, (_, i) => i);
+const arrayOfSymbols = [ "@", "#", "$", "%", "^", "*", "+", "!", "&"];
+const divisbleBy9Symbol = arrayOfSymbols.splice(Math.floor(Math.random()*9),1);
 const symbolNumberPairs = {};
-for (let i=0; i<numbers.length; i++){
+
+for (let i=0; i<100; i++){
     if (i%9 === 0){
         symbolNumberPairs[i] = divisbleBy9Symbol;
     } else {
-        symbolNumberPairs[i] = arrayOfSymbols.pop();
+        symbolNumberPairs[i] = arrayOfSymbols[Math.floor(Math.random()*8)];
     }
 }
-
-const pairsContainer = document.getElementById('primaryText');
-const table = document.createElement('table');
-for (const numbers in symbolNumberPairs){
-    if (symbolNumberPairs.hasOwnProperty(number)){
-        const symbol = symbolNumberPairs[numbers];
-        const row = document.createElement('tr');
-        const numberCell = document.createElement('td');
-        numberCell.textContent = numbers;
-        const symbolCell = document.createElement('td');
-        symbolCell.textContent = symbol;
-        row.appendChild(numberCell);
-        row.appendChild(symbolCell);
-        table.appendChild(row);
-    }
-}
-
-pairsContainer.appendChild(table);
-
