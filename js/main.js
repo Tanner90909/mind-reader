@@ -12,8 +12,28 @@ primaryText.textContent = array1[currentStateIndex];
 subText.textContent = array2[currentStateIndex];
 
 function updateText(){
+    if (currentStateIndex === 4){
+        primaryText.textContent = "";
+        const arrayOfSymbols = [ "@", "#", "$", "%", "^", "*", "+", "!", "&"];
+        const divisbleBy9Symbol = arrayOfSymbols.splice(Math.floor(Math.random()*9),1);
+        const symbolNumberPairs = {};
+    
+    for (let i=0; i<100; i++){
+        if (i%9 === 0){
+            symbolNumberPairs[i] = divisbleBy9Symbol;
+        } else {
+            symbolNumberPairs[i] = arrayOfSymbols[Math.floor(Math.random()*8)];
+        }
+        const unorderedList = document.createElement("ul");
+        const textUnorderedList = document.createTextNode(i + symbolNumberPairs[i]);
+        unorderedList.appendChild(textUnorderedList);
+        document.getElementById("primaryText").appendChild(unorderedList);
+        subText.textContent = array2[currentStateIndex];
+    }
+    } else {
         primaryText.textContent = array1[currentStateIndex];
         subText.textContent = array2[currentStateIndex];
+    }
 }
         
 nextButton.addEventListener('click', function(){
@@ -23,15 +43,3 @@ nextButton.addEventListener('click', function(){
     }
     updateText();
 });
-
-const arrayOfSymbols = [ "@", "#", "$", "%", "^", "*", "+", "!", "&"];
-const divisbleBy9Symbol = arrayOfSymbols.splice(Math.floor(Math.random()*9),1);
-const symbolNumberPairs = {};
-
-for (let i=0; i<100; i++){
-    if (i%9 === 0){
-        symbolNumberPairs[i] = divisbleBy9Symbol;
-    } else {
-        symbolNumberPairs[i] = arrayOfSymbols[Math.floor(Math.random()*8)];
-    }
-}
