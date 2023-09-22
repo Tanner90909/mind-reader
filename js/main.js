@@ -11,11 +11,12 @@ const nextButton = document.getElementById("nextButton");
 primaryText.textContent = array1[currentStateIndex];
 subText.textContent = array2[currentStateIndex];
 
+const arrayOfSymbols = [ "@", "#", "$", "%", "^", "*", "+", "!", "&"];
+const divisbleBy9Symbol = arrayOfSymbols.splice(Math.floor(Math.random()*9),1);
+
 function updateText(){
     if (currentStateIndex === 4){
         primaryText.textContent = "";
-        const arrayOfSymbols = [ "@", "#", "$", "%", "^", "*", "+", "!", "&"];
-        const divisbleBy9Symbol = arrayOfSymbols.splice(Math.floor(Math.random()*9),1);
         const symbolNumberPairs = {};
     
     for (let i=0; i<100; i++){
@@ -30,6 +31,9 @@ function updateText(){
         document.getElementById("primaryText").appendChild(unorderedList);
         subText.textContent = array2[currentStateIndex];
     }
+    } else if (currentStateIndex === 5){
+        primaryText.textContent = divisbleBy9Symbol;
+        subText.textContent = "Your symbol is: " + divisbleBy9Symbol;
     } else {
         primaryText.textContent = array1[currentStateIndex];
         subText.textContent = array2[currentStateIndex];
